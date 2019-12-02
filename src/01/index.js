@@ -1,8 +1,7 @@
-import {
-  evaluateFuelBasedOnMass,
-  evaluateFuelUntilNegativeValue,
-  readFile
-} from '_utils';
+import { convertStringToNumberList, readFile } from '_utils';
+
+import evaluateFuelBasedOnMass from './evaluate-fuel-based-on-mass';
+import evaluateFuelUntilNegativeValue from './evaluate-fuel-until-negative-value';
 
 const solve = massList => {
   const totalFuelFirstPart = evaluateFuelBasedOnMass(massList);
@@ -17,7 +16,10 @@ export default () => {
 
   return readFile('01/input.in')
     .then(data => {
-      const massList = data.split('\n').filter(mass => mass.length > 0);
+      const massList = convertStringToNumberList({
+        string: data,
+        separator: '\n'
+      });
 
       solve(massList);
     })

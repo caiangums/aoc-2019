@@ -1,4 +1,4 @@
-import { findFuel } from '_utils';
+import findFuel from './find-fuel';
 
 const findFuelUntilNegativeValue = mass => {
   let fuel = findFuel(mass);

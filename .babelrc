@@ -8,6 +8,7 @@
       {
         "alias": {
           "_utils": "./src/utils",
+          "_constants": "./src/constants",
           "_src": "./src"
         }
       }

@@ -1,7 +1,29 @@
-import { readFile } from '_utils';
+import { convertStringToNumberList, readFile } from '_utils';
+import { PROGRAM_OPCODE } from '_constants';
 
-const solve = massList => {
-  console.log('solve');
+import { parse, execute } from './compiler';
+import evaluateProgram from './evaluate-program';
+import findNounAndVerbEvaluation from './find-noun-and-verb-evaluation';
+
+const solve = integerList => {
+  let memory01 = [...integerList];
+
+  // as described in problem definition
+  memory01[1] = 12;
+  memory01[2] = 2;
+
+  memory01 = evaluateProgram(memory01);
+
+  console.log('> result 1:', memory01[0]);
+
+  let memory02 = [...integerList];
+  const value = 19690720;
+
+  const { noun, verb } = findNounAndVerbEvaluation({ memory: memory02, value });
+
+  const result02 = 100 * noun + verb;
+
+  console.log('> result 2:', result02);
 };
 
 export default () => {
@@ -9,9 +31,12 @@ export default () => {
 
   return readFile('02/input.in')
     .then(data => {
-      const list = data.split(',').filter(mass => mass.length > 0);
+      const integerList = convertStringToNumberList({
+        string: data,
+        separator: ','
+      });
 
-      solve(list);
+      solve(integerList);
     })
     .catch(err => {
       console.error('Error:', err);

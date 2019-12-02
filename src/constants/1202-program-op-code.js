@@ -1,0 +1,7 @@
+const PROGRAM_OPCODE = {
+  ADD: 1,
+  MULTIPLY: 2,
+  END_OF_EXECUTION: 99
+};
+
+export default PROGRAM_OPCODE;

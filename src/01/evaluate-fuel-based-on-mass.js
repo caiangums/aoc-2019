@@ -1,4 +1,5 @@
-import { isValidMassValue, findFuel } from '_utils';
+import isValidMassValue from './is-valid-mass-value'
+import findFuel from './find-fuel';
 
 const evaluateFuelBasedOnMass = massList =>
   massList.reduce((acc, mass) => {
