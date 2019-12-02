@@ -13,7 +13,7 @@ const solve = massList => {
 };
 
 export default () => {
-  console.log('Day 1: The Tyranny of the Rocket Equation');
+  console.log('--- Day 1: The Tyranny of the Rocket Equation ---');
 
   return readFile('01/input.in')
     .then(data => {

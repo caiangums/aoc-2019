@@ -6,12 +6,9 @@
     [
       "module-resolver",
       {
-        "root": [
-          "."
-        ],
         "alias": {
-          "_utils": "./utils",
-          "_01": "./01"
+          "_utils": "./src/utils",
+          "_src": "./src"
         }
       }
     ]
