@@ -1,0 +1,23 @@
+{
+  "name": "aoc-2019",
+  "version": "1.0.0",
+  "description": "🎄Advent of Code 2019",
+  "main": "index.js",
+  "repository": "https://github.com/caian-gums/aoc-2019.git",
+  "author": "Ilê Caian <ile.caian@gmail.com> (https://www.ile.pink/)",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "solve": "babel-node index.js",
+    "test": "jest --verbose",
+    "coverage": "jest --verbose --coverage"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "axios": "^0.19.0",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0"
+  }
+}
