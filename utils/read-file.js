@@ -1,5 +1,5 @@
 import fs from 'fs';
-import buildFilePath from './build-file-path';
+import { buildFilePath } from '_utils';
 
 const readFile = relativePath =>
   new Promise((resolve, reject) => {

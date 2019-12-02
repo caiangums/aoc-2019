@@ -1,5 +1,4 @@
-import isValidMassValue from './is-valid-mass-value';
-import findFuelUntilNegativeValue from './find-fuel-until-negative-value';
+import { findFuelUntilNegativeValue, isValidMassValue } from '_utils';
 
 const evaluateFuelUntilNegativeFuel = massList =>
   massList.reduce((acc, mass) => {

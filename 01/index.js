@@ -2,7 +2,7 @@ import {
   evaluateFuelBasedOnMass,
   evaluateFuelUntilNegativeValue,
   readFile
-} from '../utils';
+} from '_utils';
 
 const solve = massList => {
   const totalFuelFirstPart = evaluateFuelBasedOnMass(massList);
