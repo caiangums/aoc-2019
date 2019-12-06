@@ -1,4 +1,4 @@
-import evaluateProgram from './evaluate-program';
+import { evaluateProgram } from '_utils';
 
 let originalMemory;
 let originalValue;

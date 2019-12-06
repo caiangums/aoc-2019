@@ -1,4 +1,4 @@
-import { findFuel } from '_utils';
+import findFuel from '_src/01/find-fuel';
 
 describe('Day 01 - findFuel', () => {
   test('for mass 12, get 2', () => {

@@ -1,8 +1,6 @@
-import { convertStringToNumberList, readFile } from '_utils';
+import { convertStringToNumberList, evaluateProgram, readFile } from '_utils';
 import { PROGRAM_OPCODE } from '_constants';
 
-import { parse, execute } from './compiler';
-import evaluateProgram from './evaluate-program';
 import findNounAndVerbEvaluation from './find-noun-and-verb-evaluation';
 
 const solve = integerList => {

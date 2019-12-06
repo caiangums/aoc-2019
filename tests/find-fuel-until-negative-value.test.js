@@ -1,4 +1,4 @@
-import { findFuelUntilNegativeValue } from '_utils';
+import findFuelUntilNegativeValue from '_src/01/find-fuel-until-negative-value';
 
 describe('Day 01 - findFuelUntilNegative', () => {
   test('for mass 12, get 2', () => {
