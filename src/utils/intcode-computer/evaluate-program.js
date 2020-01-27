@@ -16,7 +16,11 @@ const countInstruction = ({ opcode, infos, IP }) => {
   return IP + 4;
 };
 
-const evaluateProgram = integerList => {
+const evaluateProgram = (
+  integerList,
+  inputValueList = undefined,
+  outputValueList = undefined
+) => {
   let memory = [...integerList],
     IP,
     reg3Index;
@@ -30,7 +34,13 @@ const evaluateProgram = integerList => {
       break;
     }
 
-    const infos = execute({ command, memory, IP });
+    const infos = execute({
+      command,
+      memory,
+      IP,
+      inputValueList,
+      outputValueList
+    });
 
     IP = countInstruction({ opcode, infos, IP });
   }

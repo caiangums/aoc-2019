@@ -85,15 +85,32 @@ const executeOperation = ({ command, memory, IP }) => {
   }
 };
 
-export const execute = ({ command, memory, IP }) => {
+export const execute = ({
+  command,
+  memory,
+  IP,
+  inputValueList,
+  outputValueList
+}) => {
   const { opcode, reg1 } = command;
 
   if (opcode === PROGRAM_OPCODE.OUTPUT) {
+    // in case of output sent by program
+    if (outputValueList !== undefined) {
+      outputValueList.push(memory[reg1].toString());
+      inputValueList.push(memory[reg1].toString());
+      return;
+    }
     console.log('> output', memory[reg1]);
     return;
   }
 
   if (opcode === PROGRAM_OPCODE.INPUT) {
+    // in case of input sent by program
+    if (inputValueList !== undefined && inputValueList.length > 0) {
+      memory[reg1] = parseInt(inputValueList.shift());
+      return;
+    }
     const input = readlineSync.question('Insert your Input > ');
     LOG && console.log('input', memory[reg1], reg1, input, parseInt(input));
     memory[reg1] = parseInt(input);
